@@ -1,9 +1,6 @@
 package test;
 
-import entity.Estagiario;
-import entity.Gerente;
-import entity.Veiculos;
-import entity.Vendedor;
+import entity.*;
 
 import java.util.Scanner;
 
@@ -15,11 +12,12 @@ public class Testao {
         Estagiario estagiario = new Estagiario();
         Gerente gerente = new Gerente();
         Vendedor vendedor = new Vendedor();
+        Cliente cliente = new Cliente();
 
         int op = 0;
 
         do {
-            System.out.println("Escolha a opcao\n1 - Cadastrar carro\n2 - Realizar venda\n3 - Sair");
+            System.out.println("Escolha a opcao\n1 - Cadastrar carro\n2 - Realizar venda\n3 - Cadastrar cliente\n4 - Sair");
             op = scanner.nextInt();
             switch (op){
                 case 1:
@@ -71,8 +69,17 @@ public class Testao {
                     break;
 
                 case 3:
+                    System.out.println("Digite o nome");
+                    cliente.setNome(scanner.next());
+                    System.out.println("Digite o email");
+                    cliente.setEmail(scanner.next());
+
+                    System.out.println("Cliente cadastrado");
+                    break;
+
+                case 4:
                     System.out.println("Saindo...");
             }
-        }while(op != 3);
+        }while(op != 4);
     }
 }
